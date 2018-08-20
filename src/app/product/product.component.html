@@ -1,3 +1,19 @@
-<p>
-  product works!
-</p>
+<div class = "row" >
+  <div class="card-deck col-md-4 col-sm-4 col-lg-4" *ngFor="let product of products">
+    <div class="card pull-right" >
+      <div class="thumbnail">
+        <img class="card-img-top" src="Http://placehold.it/800X300" alt="Card image cap">
+        <div class="caption">
+          <h4 class="pull-right">${{product.price}}</h4>
+          <h4>
+            <a>{{product.title}}</a>
+          </h4>
+          <p>{{product.desc}}</p>
+        </div>
+        <div>
+          <app-stars></app-stars>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
