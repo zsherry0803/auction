@@ -1,4 +1,25 @@
-<div>
+<div class = "thumbnail">
   <img src = "Http://placehold.it/600X230">
-  <h4>{{productTitle}}</h4>
+  <div>
+    <h4 class = "float-right">${{product.price}}</h4>
+  <h4>{{product.title}}</h4>
+  <p>{{product.desc}}</p>
+  </div>
+  <div>
+    <p class = "float-right">Total comments: {{comments.length}}</p>
+    <p>{{product.rating}}</p>
+  </div>
+</div>
+
+<div>
+  <div class = "row card" *ngFor ="let comment of comments">
+    <hr>
+    <div class = "col-md-12">
+      <app-stars [rating] = "comment.rating"></app-stars>
+      <span>{{comment.user}}:</span> 
+      <span class = "float-right">{{comment.timestamp}}</span>
+      <p></p>
+      <p>{{comment.content}}</p>
+    </div>
+  </div>
 </div>
